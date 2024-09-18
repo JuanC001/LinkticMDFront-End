@@ -24,8 +24,8 @@ Sigue estos pasos para instalar y configurar el proyecto localmente.
    ```bash
    npm ci
 4. Ejecuta el comando para correr el proyecto:
-   ```bash
-   npm run dev
+   ``bash
+   npm run dev ``
 
    Posteriormente el proyecto se ejecutará y se podrá ver en la url:
    ```bash
