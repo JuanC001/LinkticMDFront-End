@@ -1,13 +1,12 @@
+import { Box, Typography } from '@mui/material'
 import './App.css'
 
 function App() {
 
   return (
-    <>
-      <div>
-        My APP
-      </div>
-    </>
+    <Box>
+      <Typography variant="h1" align="center"> Hello World! </Typography>
+    </Box>
   )
 }
 
