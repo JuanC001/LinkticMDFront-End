@@ -18,7 +18,7 @@ export const NavBar = () => {
         <AppBar>
             <Container>
                 <Toolbar>
-                    <Box sx={{ cursor: 'pointer' }} flexGrow={1} onClick={() => console.log('click')}>
+                    <Box sx={{ cursor: 'pointer' }} flexGrow={1} onClick={() => handleNavigation('/')}>
                         <Typography variant="h6">
                             Reservalo!
                         </Typography>
