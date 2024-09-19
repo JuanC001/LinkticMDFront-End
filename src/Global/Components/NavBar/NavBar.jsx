@@ -2,6 +2,9 @@ import { AppBar, Box, Container, MenuItem, Toolbar, Typography } from "@mui/mate
 import { useState } from "react"
 
 import { useNavigate } from 'react-router-dom'
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 export const NavBar = () => {
     const [logged, setLogged] = useState(false)
@@ -15,7 +18,7 @@ export const NavBar = () => {
         <AppBar>
             <Container>
                 <Toolbar>
-                    <Box sx={{cursor: 'pointer'}} flexGrow={1} onClick={() => console.log('click')}>
+                    <Box sx={{ cursor: 'pointer' }} flexGrow={1} onClick={() => console.log('click')}>
                         <Typography variant="h6">
                             Reservalo!
                         </Typography>
@@ -27,16 +30,19 @@ export const NavBar = () => {
                     {
                         logged ?
                             <>
-                                <MenuItem onClick={() => handleNavigation('/reservaciones')}>
+                                <MenuItem onClick={() => handleNavigation('/reservaciones')} sx={{ display: 'flex', gap: '5px' }}>
+                                    <CalendarMonthIcon />
                                     Mis Reservaciones
                                 </MenuItem>
-                                <MenuItem>
+                                <MenuItem sx={{ display: 'flex', gap: '5px' }}>
+                                    <LogoutIcon />
                                     Cerrar sesión
                                 </MenuItem>
 
                             </>
                             :
-                            <MenuItem onClick={() => setLogged(true)}>
+                            <MenuItem onClick={() => setLogged(true)} sx={{ display: 'flex', gap: '5px' }}>
+                                <LoginIcon />
                                 Inicia sesión
                             </MenuItem>
                     }
