@@ -1,12 +1,16 @@
-import { Box, Typography } from '@mui/material'
-import './App.css'
+import { CssBaseline } from '@mui/material'
+import { AppRouter } from './Routes/AppRouter'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
   return (
-    <Box>
-      <Typography variant="h1" align="center"> Hello World! </Typography>
-    </Box>
+    <div className='App'>
+      <CssBaseline />
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </div>
   )
 }
 
