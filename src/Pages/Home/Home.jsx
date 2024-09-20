@@ -56,7 +56,7 @@ export const Home = () => {
             <Grid2 container spacing={5} mt={5}>
                 {
                     filterHotels().map(hotel => (
-                        <Grid2 size={{ xs: 12, md: 6 }} item key={hotel._id}>
+                        <Grid2 size={{ xs: 12, md: 6 }} key={hotel._id}>
                             <HotelCard hotel={hotel} />
                         </Grid2>
                     ))
