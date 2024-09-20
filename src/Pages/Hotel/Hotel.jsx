@@ -64,6 +64,20 @@ export const Hotel = () => {
 
                     <Box component={'img'} src={hotel?.image} width={'100%'} height={'500px'} sx={{ objectFit: 'cover', mx: 'auto' }} />
                     <Typography variant={'body1'}> {hotel?.description} </Typography>
+                    <Box height={'20vh'} sx={{ overflowX: 'scroll' }}>
+
+                        <Stack direction={'row'} gap={2}>
+
+                            {hotel?.reviews.map((review, index) => (
+                                <Stack key={index} gap={1} sx={{ width: '300px', p: 2, border: '1px solid #ccc', borderRadius: '5px' }}>
+                                    <Typography variant={'body2'}> {review.name} </Typography>
+                                    <Rating value={hotel.rating} readOnly />
+                                    <Typography variant={'body2'}> {review.message} </Typography>
+                                </Stack>
+                            ))}
+                        </Stack>
+
+                    </Box>
                 </Stack>
 
                 <Box height={'10vh'} display={'flex'}>
