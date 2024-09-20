@@ -1,4 +1,4 @@
-# Linktic BackEnd Prueba Técnica
+# Linktic FrontEnd Prueba Técnica
 
 Este es un front-end que se conecta al backend, está hecho utilizando React y Vite.
 
