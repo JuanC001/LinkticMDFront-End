@@ -1,13 +1,15 @@
 import { AppBar, Box, Container, MenuItem, Toolbar, Typography } from "@mui/material"
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 import { useNavigate } from 'react-router-dom'
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-
+import { UserContext } from "../../Context/UserContext";
 export const NavBar = () => {
-    const [logged, setLogged] = useState(false)
+
+    const { user, logout } = useContext(UserContext)
+
     const navigation = useNavigate()
 
     const handleNavigation = (path) => {
@@ -25,16 +27,18 @@ export const NavBar = () => {
                         <Typography variant="subtitle2">
                             a linktic project
                         </Typography>
+
                     </Box>
+                    {user && <Typography variant="h6">Bienvenido, {user.name}!</Typography>}
 
                     {
-                        logged ?
+                        user ?
                             <>
                                 <MenuItem onClick={() => handleNavigation('/reservaciones')} sx={{ display: 'flex', gap: '5px' }}>
                                     <CalendarMonthIcon />
                                     Mis Reservaciones
                                 </MenuItem>
-                                <MenuItem sx={{ display: 'flex', gap: '5px' }}>
+                                <MenuItem onClick={() => logout()} sx={{ display: 'flex', gap: '5px' }}>
                                     <LogoutIcon />
                                     Cerrar sesión
                                 </MenuItem>

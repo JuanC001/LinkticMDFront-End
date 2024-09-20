@@ -1,8 +1,3 @@
-export const UserContext = () => {
+import { createContext } from "react";
 
-    
-
-    return (
-        <div>UserContext</div>
-    )
-}
+export const UserContext = createContext()
