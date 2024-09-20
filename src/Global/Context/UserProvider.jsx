@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { UserContext } from './UserContext';
 
-
 export const UserProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
@@ -27,6 +26,7 @@ export const UserProvider = ({ children }) => {
 
         setUser(null);
         setAuthStatus(false);
+        window.location.href = '/login';
         window.sessionStorage.removeItem('user');
         window.sessionStorage.clear();
         window.localStorage.clear();
@@ -40,7 +40,6 @@ export const UserProvider = ({ children }) => {
             loggedIn(JSON.parse(user));
             return
         }
-
         setAuthStatus(false);
 
     }, [])

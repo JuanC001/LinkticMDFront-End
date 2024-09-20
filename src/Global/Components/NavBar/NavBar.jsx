@@ -17,7 +17,7 @@ export const NavBar = () => {
     }
 
     return (
-        <AppBar>
+        <AppBar sx={{zIndex: 999}}>
             <Container>
                 <Toolbar>
                     <Box sx={{ cursor: 'pointer' }} flexGrow={1} onClick={() => handleNavigation('/')}>

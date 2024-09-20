@@ -1,12 +1,14 @@
 import { Box, Button, CircularProgress, Divider, Grid2, Rating, Stack, Typography } from '@mui/material'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ReservationModal } from '../../Global/Components/ReservationModal/ReservationModal'
-
+import { UserContext } from '../../Global/Context/UserContext'
 import linkticApi from '../../api/linkticApi'
+import Swal from 'sweetalert2'
 
 export const Hotel = () => {
 
+    const { user } = useContext(UserContext)
     const params = useParams()
     const [hotel, setHotel] = useState(null)
     const [modalOpen, setModalOpen] = useState(false)
@@ -21,6 +23,11 @@ export const Hotel = () => {
     }, [])
 
     const handleToggle = () => {
+        if (!user) return Swal.fire({
+            icon: 'warning',
+            title: 'Debes iniciar sesion',
+            text: 'Para reservar debes iniciar sesion'
+        })
         setModalOpen(!modalOpen)
     }
 
@@ -65,7 +72,7 @@ export const Hotel = () => {
 
             </Box>
 
-            <ReservationModal open={modalOpen} handleToggle={handleToggle} />
+            <ReservationModal open={modalOpen} handleToggle={handleToggle} hotelId={params.id} />
 
         </>
     )
