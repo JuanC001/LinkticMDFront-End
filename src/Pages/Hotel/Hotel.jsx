@@ -1,7 +1,7 @@
 import { Box, Button, CircularProgress, Divider, Grid2, Rating, Stack, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { ReservationModal } from './ReservationModal'
+import { ReservationModal } from '../../Global/Components/ReservationModal/ReservationModal'
 
 export const Hotel = () => {
 
