@@ -7,6 +7,10 @@ Este es un front-end que se conecta al backend, está hecho utilizando React y V
 Se realizó un proyecto de reservas de hoteles, para cumplir con la prueba tecnica para LinkTic de desarrollador MD.
 El proyecto se realizó utilizando React y Vite para el front-end (Proyecto Actual).
 
+## Diagrama de Arquitectura
+
+![Alt text](DiagramaDespliegue.png)
+
 ## Requisitos previos
 
 - [ ] Node.js (El proyecto fue creado con la versión 20.16.0)
@@ -42,4 +46,8 @@ Dentro de la carpeta principal, se debe crear un archivo `.env` dentro se debe c
 VITE_API_URL='URL del Sistema Local'
 ```
 El ejemplo se puede ver en el archivo `.env`
+
+## API y EndPoints
+
+Para conocer todos los end-points que tiene la API puedes entrar en el siguiente [enlace](https://documenter.getpostman.com/view/38032460/2sAXqta1Sx)
 
