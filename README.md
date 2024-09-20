@@ -2,6 +2,11 @@
 
 Este es un front-end que se conecta al backend, está hecho utilizando React y Vite.
 
+## Descripción
+
+Se realizó un proyecto de reservas de hoteles, para cumplir con la prueba tecnica para LinkTic de desarrollador MD.
+El proyecto se realizó utilizando React y Vite para el front-end (Proyecto Actual).
+
 ## Requisitos previos
 
 - [ ] Node.js (El proyecto fue creado con la versión 20.16.0)
@@ -30,3 +35,11 @@ Sigue estos pasos para instalar y configurar el proyecto localmente.
    Posteriormente el proyecto se ejecutará y se podrá ver en la url:
    ```bash
    localhost:5173
+
+## Configuración
+Dentro de la carpeta principal, se debe crear un archivo `.env` dentro se debe colocar la siguiente información
+```bash
+VITE_API_URL='URL del Sistema Local'
+```
+El ejemplo se puede ver en el archivo `.env`
+
