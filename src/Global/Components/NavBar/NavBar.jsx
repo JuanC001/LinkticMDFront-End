@@ -41,7 +41,7 @@ export const NavBar = () => {
 
                             </>
                             :
-                            <MenuItem onClick={() => setLogged(true)} sx={{ display: 'flex', gap: '5px' }}>
+                            <MenuItem onClick={() => handleNavigation('/login')} sx={{ display: 'flex', gap: '5px' }}>
                                 <LoginIcon />
                                 Inicia sesión
                             </MenuItem>

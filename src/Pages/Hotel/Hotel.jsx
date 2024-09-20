@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ReservationModal } from '../../Global/Components/ReservationModal/ReservationModal'
 
+import linkticApi from '../../api/linkticApi'
+
 export const Hotel = () => {
 
     const params = useParams()
@@ -10,14 +12,8 @@ export const Hotel = () => {
     const [modalOpen, setModalOpen] = useState(false)
 
     const fetchHotel = async () => {
-        const response = await fetch(`http://localhost:3000/api/hotel/${params.id}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        const data = await response.json()
-        setHotel(data)
+        const response = await linkticApi.get(`/hotel/${params.id}`)
+        setHotel(response.data)
     }
 
     useEffect(() => {
